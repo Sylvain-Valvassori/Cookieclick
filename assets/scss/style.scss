@@ -1,0 +1,280 @@
+@import "./libs/reset.scss";
+@import "./libs/fonts.scss";
+
+
+
+/*============== variables setup ===================*/
+
+:root{
+    --whiteColor:    rgb(255, 255, 255);
+    --nullColor:     rgb(218, 218, 218);
+    --mainColor:     rgb(230, 120, 17);
+    --secondColor:   rgb(136, 30, 228);
+    --accentColor:   rgb(133, 226, 31);
+    --lightColor:    rgb(73, 29, 136);
+    --darkColor:     rgb(51, 26, 56);
+    --purpleColor:   rgb(136, 30, 228);
+    --gradientColor: linear-gradient(45deg ,rgba(73, 29, 136,0.5),rgba(136, 30, 228,0.5));
+
+    
+    --mainFont: 'Sora-ExtraBold';
+    --secondFont: 'Hollows';
+    
+}
+// var(--white-color);
+
+@mixin flex--center { 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;  
+}
+// @include  flex--center;
+
+
+/*============== base html ===================*/
+
+html{
+    background-color: var(--nullColor) ; 
+    font-family: var( --mainFont);
+}
+
+body{
+    width: 100%;
+    // height:100vh;
+    
+    background-image: url("../images/bg.jpg");
+    background-position: center center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+/*============== main content ===================*/
+.btnAudio{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width:  3rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+
+.containerLogo {
+    @include  flex--center;
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+
+    padding: 0 1rem 0 2rem;
+
+    img{
+        width: 40rem;
+        height: auto;
+    }
+}
+
+
+main{
+    margin: 0 auto;
+    min-width: 30rem;
+    // height: auto;
+    text-align: center;
+
+    h2{
+        color: var(--whiteColor);
+        font-size: 5rem;
+        font-family: var( --secondFont);
+        
+        padding: 4rem 0 3rem 0;
+
+        span{
+            font-size: 6rem;
+        }
+    }
+}
+
+/*============== Ghost ===================*/
+
+.containerGhost{
+    @include  flex--center;
+    min-width: 30rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+ 
+    img{
+        cursor: pointer;
+        mix-blend-mode: lighten;
+        max-width:  70rem;
+        aspect-ratio: 1;
+    }
+}
+
+/*============== Events  Ghost ===================*/
+
+.containerGhost img:active{
+    width:  45rem;
+    aspect-ratio: 1;
+}
+
+/*============== Bonus buttons ===================*/
+
+.menuBonus{
+    position: relative;
+    max-width: 80rem;
+    height: auto;
+
+    padding: 2rem;
+    background-color: rgba(0,0,0,0.1);
+    
+    border-radius: 1rem;
+
+    p{
+        position: absolute;
+        top: -2rem;
+        left: 2rem;
+
+        color: var( --whiteColor);
+        font-family: var( --mainFont);
+        font-size: 3rem;
+    }
+
+    .btn{
+        width:  12rem;
+        aspect-ratio: 1;
+
+        cursor: pointer;
+        margin: 2rem;
+        padding: 1rem 0 1rem 0;
+        border-radius: 0.5rem;
+        border: none;
+        text-align:center;
+        text-decoration: none;
+        font-size: 2rem;
+        font-family: var( --mainFont);
+        text-transform: uppercase;
+        color: var(--whiteColor);
+        
+        background: var(--gradientColor);
+        
+        .logoBtn{
+            @include  flex--center;
+
+            margin-bottom: 1rem;
+            width:  6rem;
+            aspect-ratio: 1;
+        }
+    }
+}
+
+
+/*============== Events  Bonus buttons ===================*/
+
+.btn:hover {
+    background-color:  var(--mainColor); 
+}
+
+/*============== Responsive  Média querry  ===================*/
+
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet:  768px;
+
+/*============== Version tablet  ===================*/
+
+@media (min-width: $breakpoint-tablet) {
+    .btnAudio{
+        top: 5rem;
+        right: 5rem;
+        width:  8rem;
+        aspect-ratio: 1;
+    }
+    .containerLogo{
+        width: 100%;
+        height: 20rem;
+        padding: 0 1rem 0 2rem;
+
+        img{
+            width: 40rem;
+            height: auto;
+        }
+    }
+    .containerGhost{
+        max-width:75rem;
+        img{
+            max-width:  100rem;
+            aspect-ratio: 1;
+        }
+    }
+    .menuBonus{
+        max-width: 100%;
+    }
+}
+
+/*============== Version Desktop  ===================*/
+
+@media (min-width: $breakpoint-desktop) {
+    .btnAudio{
+        top: 5rem;
+        right: 10rem;
+        width:  12rem;
+        aspect-ratio: 1;
+    }
+    header{
+        width: 100%;
+        padding: 0 1rem 0 2rem;
+        text-align: center;
+    
+        .containerLogo {
+            @include  flex--center;
+            width: 100%;
+            height: 35rem;
+            overflow: hidden;
+
+            img{
+                width: 60rem;
+                height: auto;
+            }
+        }
+    }
+
+    main{
+        display:flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        
+        h2{
+            font-size: 6rem;
+            width: 40rem;
+        }
+    }
+
+    .containerGhost{
+        cursor: pointer;
+        mix-blend-mode: lighten;
+        width: 70rem;
+        aspect-ratio: 1;
+
+        transform: translateY(15%);
+        img{
+            max-width:  500rem;
+            aspect-ratio: 1;
+        }
+    }
+    .menuBonus{
+        width: 20rem;
+        margin: 6rem;
+        flex-direction: column;
+
+        p{
+            left: 4rem;
+        }
+        .btn{
+            width:  10rem;
+            aspect-ratio: 1;
+        }
+    }
+}
+
+
+

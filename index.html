@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="groupe 4">
+    <link rel="shortcut icon" type="imagex/png" href="assets/images/skull.ico">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Cookie-Clicker</title>
+</head>
+<body>
+    <audio  id="spookySong"  autoplay="true">
+        <source src="assets/song/song.mp3" type="audio/mp3">
+    </audio>
+
+    
+    <img  id="icon" class="btnAudio" src="./assets/images/play.png" width="10" height="10"  alt="play icon">
+    
+
+
+
+    <section class="containerLogo">
+        <img src="./assets/images/spookie.png" alt="ghost">
+    </section>
+    
+
+
+<main>
+    
+    <h2>
+        <span id="score">0</span> x<span id="multiplicateur">0</span>
+    </h2>
+    
+    <section class="containerGhost">
+            <img id="ghost" src="./assets/images/ghost gif.gif" alt="ghost">
+    </section>
+
+    <section class="menuBonus">
+        <p>Bonus</p>
+        <button  class="btn"   id="btnBonusOne"   type="button">
+            <img src="./assets/images/jarEye.png"      width="10" height="10"   class="logoBtn" alt="jarEye">
+            <span id="priceOne">100</span>
+        </button>
+
+        <button  class="btn"   id="btnBonusTwo"   type="button">
+            <img src="./assets/images/jarSpider.png"   width="10" height="10"   class="logoBtn" alt="jarSpider">
+            <span id="priceTwo">500</span>
+        </button>
+        <button  class="btn"   id="btnBonusThree" type="button">
+            <img src="./assets/images/book.png"        width="10" height="10"   class="logoBtn" alt="book">
+            <span id="priceThree">2000</span>
+        </button>
+        <button  class="btn"   id="btnBonusFour"  type="button">
+            <img src="./assets/images/skull.png"       width="10" height="10"   class="logoBtn" alt="skull">
+            <span id="priceFour">10000</span>
+        </button>
+
+        <button  class="btn"   id="btnBonusFive"  type="button">
+            <img src="./assets/images/citrouille.png"       width="10" height="10"   class="logoBtn" alt="skull">
+            <span id="priceFour">50000</span>
+        </button>
+    </section>
+</main>
+    
+</body>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/multiplier.js"></script>
+<!-- <script src="./assets/js/save.js"></script> -->
+</html>
